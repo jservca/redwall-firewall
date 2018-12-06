@@ -1,5 +1,5 @@
 import os
-import redgate
+from modules import redgate
 
 class Main():
     def __init__(self):

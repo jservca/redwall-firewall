@@ -1,0 +1,3 @@
+
+application:
+        templates_dir: /opt/redgate/api/templates/
