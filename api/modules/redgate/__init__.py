@@ -31,7 +31,7 @@ class templates():
         def render(self, tpl, values = None):
             #print(self.cfg['application']['templates_dir'] + tpl)
             template = self.env.get_template(tpl)
-            print(template.render(**values))
+            return template.render(**values)
 
 
 

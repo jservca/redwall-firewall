@@ -12,6 +12,9 @@ modules = {
 	'firewall': 'simple-firewall'
 }
 
+@app.route('/favicon.ico')
+def favicon():
+    return ''
 
 @app.route('/')
 def root():
@@ -24,4 +27,7 @@ def route(path):
     routing = {}
     module = importlib.import_module('modules.' + modules[mname], package=None)
     routing[mname]  = module.Main()
-    return jsonify(routing[mname].request())
+    if len(parts) > 1:
+        return jsonify(routing[mname].request(parts[1]))
+    else:
+        return jsonify(routing[mname].request())

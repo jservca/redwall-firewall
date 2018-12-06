@@ -6,7 +6,10 @@ class Main():
         self.tpls = redgate.templates()
 
     def request(self, args=False):
-        return {'module': 'DNSMasq'}
+        if not args:
+            return {'module': 'DNSMasq'}
+        else:
+            return self.load_template()
 
     def load_template(self):
         vals = {
@@ -15,5 +18,5 @@ class Main():
             'bogus_priv':     'bogus-priv', 
             'interfaces':     ['enp1s0', 'enp1s8']
         }
-        self.tpls.render('dnsmasq/dnsmasq.conf.tpl', vals)
+        return self.tpls.render('dnsmasq/dnsmasq.conf.tpl', vals)
 
