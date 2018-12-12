@@ -3,6 +3,10 @@ Flask==1.0.2
 itsdangerous==1.1.0
 Jinja2==2.10
 MarkupSafe==1.1.0
+meld3==1.0.2
+pkg-resources==0.0.0
 pluginbase==0.7
+PyYAML==3.13
 simplejson==3.16.0
+supervisor==4.0.0.dev0
 Werkzeug==0.14.1
